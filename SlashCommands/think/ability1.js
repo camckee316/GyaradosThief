@@ -15,8 +15,16 @@ module.exports = {
 
    run: async (message) => {
  
-    let abilityName = message.content.toLowerCase().split("/ability")[1];
-  
+    let abilityName = message.content.toLowerCase().split("/ability")[1]; 
+
+     /*let abilityName = message.content.toLowerCase().split("/ability")[1];
+                                      ^
+
+TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at Object.run (C:\Users\camck\Desktop\GT - Copy\SlashCommands\think\ability1.js:18:39)    
+    at Client.<anonymous> (C:\Users\camck\Desktop\GT - Copy\events\interactionCreate.js:26:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) */
+     
     for (var i = 0; i < abilityDB.length; i++) {
       if (abilityName == abilityDB[i]._ability.toLowerCase()) {
         let Embed = new MessageEmbed()
